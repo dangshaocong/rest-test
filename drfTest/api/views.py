@@ -1,15 +1,17 @@
+from rest_framework.views import APIView
+from django.http import JsonResponse
+
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework.decorators import detail_route, list_route
 from api.serializers import ProductSerializer
 from api.models import Product
-from django.shortcuts import render
-from rest_framework.views import APIView
-from django.http import JsonResponse
+
 
 # Create your views here.
+
 class GetMessageView(APIView):
-    # get 请求
+        # get 请求
     def get(self, request):
         # 获取参数数据
         get = request.GET
@@ -20,7 +22,7 @@ class GetMessageView(APIView):
         d = {
             'status': 1,
             'message': 'success',
-            }
+        }
         return JsonResponse(d)
 
 
